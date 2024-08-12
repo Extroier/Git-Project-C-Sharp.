@@ -43,55 +43,48 @@ namespace ProjetoMosquitoVelho
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             double Valor1, Valor2, resp=0;
-
-            Valor1 = Convert.ToDouble (txtValor1.Text);
-            Valor2 = Convert.ToDouble (txtValor2.Text);
-            //instânciar o objecto/classe usar o objecto sem modificar sua estrutura. Primeiro se criar variavel de mesmo tipo de objecto,variavel com mesmo nome da classe.
-            Operacoes variaveloperacoes = new Operacoes();
-            if(rdbAdicionar.Checked)
-            resp = Operacoes.somar(Valor1, Valor2);
-            if (rdbSubtrair.Checked)
-                resp = variaveloperacoes.menos(Valor1, Valor2);
-            if (rdbMultiplicar.Checked)
-                resp = variaveloperacoes.vezes(Valor1, Valor2);
-            if (rdbDividir.Checked)
+            try
             {
-                if (Valor2== 0)
+               
+                    Valor1 = Convert.ToDouble(txtValor1.Text);
+                    Valor2 = Convert.ToDouble(txtValor2.Text);
+                 //instânciar o objecto/classe usar o objecto sem modificar sua estrutura. Primeiro se criar variavel de mesmo tipo de objecto,variavel com mesmo nome da classe.
+                 Operacoes variaveloperacoes = new Operacoes();
+                 if (rdbAdicionar.Checked)
+                    resp = Operacoes.somar(Valor1, Valor2);
+                 if (rdbSubtrair.Checked)
+                    resp = variaveloperacoes.menos(Valor1, Valor2);
+                 if (rdbMultiplicar.Checked)
+                    resp = variaveloperacoes.vezes(Valor1, Valor2);
+                 if (rdbDividir.Checked)
                 {
-                    MessageBox.Show("Falha,divisão com 0 impossível", "SistemaABC Ensina",
-                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Stop, MessageBoxDefaultButton.Button3);
-                    //execultar metodo limpar
-                    LimparCampos();
-                }
-                else
-            { 
-                    resp = variaveloperacoes.dividir(Valor1, Valor2);
-                 }
+                    if (Valor2 == 0)
+                    {
+                        MessageBox.Show("Falha,divisão com 0 impossível", "SistemaABC Ensina",
+                        MessageBoxButtons.YesNoCancel, MessageBoxIcon.Stop, MessageBoxDefaultButton.Button3);
+                        //execultar metodo limpar
+                        LimparCampos();
+                    }
+                    else
+                    {
+                        resp = variaveloperacoes.dividir(Valor1, Valor2);
+                    }
 
+                }
+
+                if (rdbPotencia.Checked)
+                    resp = variaveloperacoes.potencia(Valor1, Valor2);
+                lblResposta.Text = resp.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Por favor caro usuário,insira somente números",
+              "SistemaABC Implora", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                LimparCampos();
             }
 
-            if (rdbPotencia.Checked)
-                resp = variaveloperacoes.potencia(Valor1, Valor2);
-            lblResposta.Text = resp.ToString();
-            if (rdbDividir.Checked)
-            {
-                if (Valor2 == 0)
-                {
-                    MessageBox.Show("Falha,divisão com 0 impossível", "SistemaABC Ensina",
-                    MessageBoxButtons.YesNoCancel, MessageBoxIcon.Stop, MessageBoxDefaultButton.Button3);
-                    //execultar metodo limpar
-                    LimparCampos();
-                }
-            }
-        
-        private void rdbAdicionar_CheckedChanged(object sender, EventArgs e)
-        {
 
         }
 
-        private void rdbSubtrair_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

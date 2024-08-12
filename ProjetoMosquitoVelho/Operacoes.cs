@@ -41,7 +41,7 @@ namespace ProjetoMosquitoVelho
         public double potencia(double valor1, double valor2)
         {
             //loop
-            return (valor1 * 2 * valor2);
+            return Math.Pow(valor1, valor2);
         }
     }
 }

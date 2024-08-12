@@ -140,7 +140,6 @@ namespace ProjetoMosquitoVelho
             this.rdbSubtrair.TabStop = true;
             this.rdbSubtrair.Text = "&Subtração";
             this.rdbSubtrair.UseVisualStyleBackColor = true;
-            this.rdbSubtrair.CheckedChanged += new System.EventHandler(this.rdbSubtrair_CheckedChanged);
             // 
             // rdbAdicionar
             // 

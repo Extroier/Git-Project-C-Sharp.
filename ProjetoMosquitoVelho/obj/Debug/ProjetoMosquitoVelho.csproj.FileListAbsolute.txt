@@ -12,3 +12,5 @@ C:\Users\henrique.gsmessias\Documents\Visual Studio 2019\Templates\EmpresaABC\Pr
 C:\Users\henrique.gsmessias\Documents\Visual Studio 2019\Templates\EmpresaABC\ProjetoMosquitoVelho\obj\Debug\ProjetoMosquitoVelho.frmCalculos.resources
 C:\Users\henrique.gsmessias\Documents\Visual Studio 2019\Templates\EmpresaABC\ProjetoMosquitoVelho\obj\Debug\ProjetoMosquitoVelho.frmComponentes.resources
 C:\Users\henrique.gsmessias\Documents\Visual Studio 2019\Templates\EmpresaABC\ProjetoMosquitoVelho\obj\Debug\ProjetoMosquitoVelho.frmCalculadora.resources
+C:\Users\henrique.gsmessias\Documents\Visual Studio 2019\Templates\EmpresaABC\ProjetoMosquitoVelho\obj\Debug\ProjetoMosquitoVelho.frmMenuPrincipal.resources
+C:\Users\henrique.gsmessias\Documents\Visual Studio 2019\Templates\EmpresaABC\ProjetoMosquitoVelho\obj\Debug\ProjetoMosquitoVelho.frmFuncionarios.resources

@@ -33,7 +33,7 @@ namespace ProjetoMosquitoVelho
             this.PctImagem = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
-            this.txbUser = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnEntrar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@ namespace ProjetoMosquitoVelho
             this.PctImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PctImagem.TabIndex = 0;
             this.PctImagem.TabStop = false;
+            this.PctImagem.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.PctImagem_MouseDoubleClick);
             // 
             // lblUsuario
             // 
@@ -72,14 +73,15 @@ namespace ProjetoMosquitoVelho
             this.lblSenha.TabIndex = 2;
             this.lblSenha.Text = "Senha";
             // 
-            // txbUser
+            // txtUser
             // 
-            this.txbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbUser.Location = new System.Drawing.Point(407, 140);
-            this.txbUser.MaxLength = 25;
-            this.txbUser.Name = "txbUser";
-            this.txbUser.Size = new System.Drawing.Size(270, 26);
-            this.txbUser.TabIndex = 0;
+            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Location = new System.Drawing.Point(407, 140);
+            this.txtUser.MaxLength = 25;
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(270, 26);
+            this.txtUser.TabIndex = 0;
+            this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUser_KeyDown);
             // 
             // txtSenha
             // 
@@ -90,6 +92,7 @@ namespace ProjetoMosquitoVelho
             this.txtSenha.PasswordChar = 'l';
             this.txtSenha.Size = new System.Drawing.Size(270, 25);
             this.txtSenha.TabIndex = 1;
+            this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyDown);
             // 
             // btnEntrar
             // 
@@ -100,6 +103,7 @@ namespace ProjetoMosquitoVelho
             this.btnEntrar.TabIndex = 2;
             this.btnEntrar.Text = "&Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // btnSair
             // 
@@ -120,7 +124,7 @@ namespace ProjetoMosquitoVelho
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txbUser);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.PctImagem);
@@ -139,7 +143,7 @@ namespace ProjetoMosquitoVelho
         private System.Windows.Forms.PictureBox PctImagem;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.TextBox txbUser;
+        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Button btnSair;
