@@ -132,6 +132,7 @@ namespace ProjetoMosquitoVelho
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.Text = "EmpresaABC";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PctImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

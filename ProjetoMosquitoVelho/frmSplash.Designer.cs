@@ -29,11 +29,13 @@ namespace ProjetoMosquitoVelho
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSplash));
             this.pctLogo = new System.Windows.Forms.PictureBox();
             this.lblNumberPercent = new System.Windows.Forms.Label();
             this.lblPercent = new System.Windows.Forms.Label();
             this.PgbProgress = new System.Windows.Forms.ProgressBar();
+            this.tmrSplash = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,11 +52,12 @@ namespace ProjetoMosquitoVelho
             // lblNumberPercent
             // 
             this.lblNumberPercent.AutoSize = true;
-            this.lblNumberPercent.Location = new System.Drawing.Point(390, 322);
+            this.lblNumberPercent.Location = new System.Drawing.Point(375, 322);
             this.lblNumberPercent.Name = "lblNumberPercent";
-            this.lblNumberPercent.Size = new System.Drawing.Size(13, 13);
+            this.lblNumberPercent.Size = new System.Drawing.Size(19, 13);
             this.lblNumberPercent.TabIndex = 1;
-            this.lblNumberPercent.Text = "0";
+            this.lblNumberPercent.Text = "0  ";
+            this.lblNumberPercent.Click += new System.EventHandler(this.lblNumberPercent_Click);
             // 
             // lblPercent
             // 
@@ -68,12 +71,20 @@ namespace ProjetoMosquitoVelho
             // PgbProgress
             // 
             this.PgbProgress.Location = new System.Drawing.Point(207, 338);
+            this.PgbProgress.MarqueeAnimationSpeed = 1;
             this.PgbProgress.Maximum = 99;
             this.PgbProgress.Name = "PgbProgress";
             this.PgbProgress.Size = new System.Drawing.Size(389, 33);
             this.PgbProgress.Step = 1;
             this.PgbProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.PgbProgress.TabIndex = 3;
+            this.PgbProgress.Click += new System.EventHandler(this.PgbProgress_Click);
+            // 
+            // tmrSplash
+            // 
+            this.tmrSplash.Enabled = true;
+            this.tmrSplash.Interval = 10;
+            this.tmrSplash.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmSplash
             // 
@@ -88,6 +99,7 @@ namespace ProjetoMosquitoVelho
             this.Name = "frmSplash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MOS-Splash";
+            this.Load += new System.EventHandler(this.frmSplash_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -100,5 +112,6 @@ namespace ProjetoMosquitoVelho
         private System.Windows.Forms.Label lblNumberPercent;
         private System.Windows.Forms.Label lblPercent;
         private System.Windows.Forms.ProgressBar PgbProgress;
+        private System.Windows.Forms.Timer tmrSplash;
     }
 }

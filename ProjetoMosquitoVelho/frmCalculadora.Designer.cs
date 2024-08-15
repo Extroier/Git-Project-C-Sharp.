@@ -45,6 +45,7 @@ namespace ProjetoMosquitoVelho
             this.lblResposta = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.gpbOperação.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,6 +108,7 @@ namespace ProjetoMosquitoVelho
             this.rdbPotencia.TabStop = true;
             this.rdbPotencia.Text = "&Potência";
             this.rdbPotencia.UseVisualStyleBackColor = true;
+            this.rdbPotencia.CheckedChanged += new System.EventHandler(this.rdbPotencia_CheckedChanged);
             // 
             // rdbDividir
             // 
@@ -216,11 +218,23 @@ namespace ProjetoMosquitoVelho
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(12, 395);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(108, 43);
+            this.btnVoltar.TabIndex = 13;
+            this.btnVoltar.Text = "&Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.UseWaitCursor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // frmCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.lblResposta);
@@ -236,6 +250,7 @@ namespace ProjetoMosquitoVelho
             this.Name = "frmCalculadora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SistemaABC-Calculadora";
+            this.Load += new System.EventHandler(this.frmCalculadora_Load);
             this.gpbOperação.ResumeLayout(false);
             this.gpbOperação.PerformLayout();
             this.ResumeLayout(false);
@@ -260,5 +275,6 @@ namespace ProjetoMosquitoVelho
         private System.Windows.Forms.Label lblResposta;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

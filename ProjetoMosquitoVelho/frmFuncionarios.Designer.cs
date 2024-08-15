@@ -108,6 +108,7 @@ namespace ProjetoMosquitoVelho
             this.btnVoltar.TabIndex = 7;
             this.btnVoltar.Text = "&Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnLimpar
             // 
@@ -128,6 +129,7 @@ namespace ProjetoMosquitoVelho
             this.MaximizeBox = false;
             this.Name = "frmFuncionarios";
             this.Text = "Sistema ABC-Funcionários :)";
+            this.Load += new System.EventHandler(this.frmFuncionarios_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

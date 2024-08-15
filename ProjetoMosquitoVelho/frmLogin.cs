@@ -7,11 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace ProjetoMosquitoVelho
 {
     public partial class frmLogin : Form
     {
+        //Criando variáveis para controle do menu
+        const int MF_BYCOMMAND = 0X400;
+        [DllImport("user32")]
+        static extern int RemoveMenu(IntPtr hMenu, int nPosition, int wFlags);
+        [DllImport("user32")]
+        static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
+        [DllImport("user32")]
+        static extern int GetMenuItemCount(IntPtr hWnd);
         public frmLogin()
         {
             InitializeComponent();
@@ -26,7 +35,7 @@ namespace ProjetoMosquitoVelho
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (txtUser.Text.Equals("LORDE DO MUNDO") && txtSenha.Text.Equals("majestade")) 
+            if (txtUser.Text.Equals("User") && txtSenha.Text.Equals("senha")) 
             {
                 frmMenuPrincipal open = new frmMenuPrincipal();
                 open.Show();
@@ -70,6 +79,19 @@ namespace ProjetoMosquitoVelho
             {
                 btnEntrar.Focus();
             }
+        }
+
+        private void PctImagem_Click(object sender, EventArgs e)
+        
+        {
+           
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            IntPtr hMenu = GetSystemMenu(this.Handle, false);
+            int MenuCount = GetMenuItemCount(hMenu) - 1;
+            RemoveMenu(hMenu, MenuCount, MF_BYCOMMAND);
         }
     }
 }
