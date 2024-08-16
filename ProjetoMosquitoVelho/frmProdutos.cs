@@ -101,7 +101,10 @@ namespace ProjetoMosquitoVelho
         {
             {
                 MessageBox.Show("Relógio do fim ligado.");
-                Application.Exit();
+                frmListarProdutos open = new frmListarProdutos();
+                open.Show();
+                this.Hide();
+                //Application.Exit();
             }
         }
     }

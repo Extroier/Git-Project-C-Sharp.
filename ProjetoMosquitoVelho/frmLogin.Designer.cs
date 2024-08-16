@@ -81,6 +81,7 @@ namespace ProjetoMosquitoVelho
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(270, 26);
             this.txtUser.TabIndex = 0;
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             this.txtUser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUser_KeyDown);
             // 
             // txtSenha

@@ -40,6 +40,17 @@ namespace ProjetoMosquitoVelho
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnTestarPessoa = new System.Windows.Forms.Button();
             this.lblTrueName = new System.Windows.Forms.Label();
+            this.btnReservar = new System.Windows.Forms.Button();
+            this.lblReservar = new System.Windows.Forms.Label();
+            this.lblReserva = new System.Windows.Forms.Label();
+            this.ltbReservas = new System.Windows.Forms.ListBox();
+            this.txtNumerodoCartao = new System.Windows.Forms.ComboBox();
+            this.lblDocumento = new System.Windows.Forms.Label();
+            this.txtDocumento = new System.Windows.Forms.ComboBox();
+            this.lblNumerodoCartao = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.mtbNumerodoCartao = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnCarregar
@@ -55,9 +66,9 @@ namespace ProjetoMosquitoVelho
             // ltbListaProdutos
             // 
             this.ltbListaProdutos.FormattingEnabled = true;
-            this.ltbListaProdutos.Location = new System.Drawing.Point(384, 55);
+            this.ltbListaProdutos.Location = new System.Drawing.Point(629, 55);
             this.ltbListaProdutos.Name = "ltbListaProdutos";
-            this.ltbListaProdutos.Size = new System.Drawing.Size(317, 303);
+            this.ltbListaProdutos.Size = new System.Drawing.Size(124, 303);
             this.ltbListaProdutos.TabIndex = 1;
             // 
             // cbbProdutos
@@ -80,7 +91,7 @@ namespace ProjetoMosquitoVelho
             // lblLista
             // 
             this.lblLista.AutoSize = true;
-            this.lblLista.Location = new System.Drawing.Point(488, 36);
+            this.lblLista.Location = new System.Drawing.Point(626, 33);
             this.lblLista.Name = "lblLista";
             this.lblLista.Size = new System.Drawing.Size(89, 13);
             this.lblLista.TabIndex = 4;
@@ -116,7 +127,7 @@ namespace ProjetoMosquitoVelho
             // 
             // btnTestarPessoa
             // 
-            this.btnTestarPessoa.Location = new System.Drawing.Point(47, 249);
+            this.btnTestarPessoa.Location = new System.Drawing.Point(391, 119);
             this.btnTestarPessoa.Name = "btnTestarPessoa";
             this.btnTestarPessoa.Size = new System.Drawing.Size(232, 45);
             this.btnTestarPessoa.TabIndex = 8;
@@ -127,17 +138,126 @@ namespace ProjetoMosquitoVelho
             // lblTrueName
             // 
             this.lblTrueName.AutoSize = true;
-            this.lblTrueName.Location = new System.Drawing.Point(214, 357);
+            this.lblTrueName.Location = new System.Drawing.Point(470, 103);
             this.lblTrueName.Name = "lblTrueName";
             this.lblTrueName.Size = new System.Drawing.Size(65, 13);
             this.lblTrueName.TabIndex = 9;
             this.lblTrueName.Text = "True Names";
+            // 
+            // btnReservar
+            // 
+            this.btnReservar.Location = new System.Drawing.Point(85, 295);
+            this.btnReservar.Name = "btnReservar";
+            this.btnReservar.Size = new System.Drawing.Size(136, 33);
+            this.btnReservar.TabIndex = 10;
+            this.btnReservar.Text = "&Reservar";
+            this.btnReservar.UseVisualStyleBackColor = true;
+            this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
+            // 
+            // lblReservar
+            // 
+            this.lblReservar.AutoSize = true;
+            this.lblReservar.Location = new System.Drawing.Point(743, 428);
+            this.lblReservar.Name = "lblReservar";
+            this.lblReservar.Size = new System.Drawing.Size(45, 13);
+            this.lblReservar.TabIndex = 11;
+            this.lblReservar.Text = "reservar";
+            this.lblReservar.Visible = false;
+            // 
+            // lblReserva
+            // 
+            this.lblReserva.AutoSize = true;
+            this.lblReserva.Location = new System.Drawing.Point(488, 17);
+            this.lblReserva.Name = "lblReserva";
+            this.lblReserva.Size = new System.Drawing.Size(47, 13);
+            this.lblReserva.TabIndex = 13;
+            this.lblReserva.Text = "Reserva";
+            // 
+            // ltbReservas
+            // 
+            this.ltbReservas.FormattingEnabled = true;
+            this.ltbReservas.Location = new System.Drawing.Point(451, 43);
+            this.ltbReservas.Name = "ltbReservas";
+            this.ltbReservas.Size = new System.Drawing.Size(124, 30);
+            this.ltbReservas.TabIndex = 12;
+            // 
+            // txtNumerodoCartao
+            // 
+            this.txtNumerodoCartao.FormattingEnabled = true;
+            this.txtNumerodoCartao.Location = new System.Drawing.Point(333, 352);
+            this.txtNumerodoCartao.Name = "txtNumerodoCartao";
+            this.txtNumerodoCartao.Size = new System.Drawing.Size(121, 21);
+            this.txtNumerodoCartao.TabIndex = 14;
+            // 
+            // lblDocumento
+            // 
+            this.lblDocumento.AutoSize = true;
+            this.lblDocumento.Location = new System.Drawing.Point(205, 231);
+            this.lblDocumento.Name = "lblDocumento";
+            this.lblDocumento.Size = new System.Drawing.Size(62, 13);
+            this.lblDocumento.TabIndex = 15;
+            this.lblDocumento.Text = "Documento";
+            // 
+            // txtDocumento
+            // 
+            this.txtDocumento.FormattingEnabled = true;
+            this.txtDocumento.Location = new System.Drawing.Point(50, 228);
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(121, 21);
+            this.txtDocumento.TabIndex = 16;
+            // 
+            // lblNumerodoCartao
+            // 
+            this.lblNumerodoCartao.AutoSize = true;
+            this.lblNumerodoCartao.Location = new System.Drawing.Point(205, 271);
+            this.lblNumerodoCartao.Name = "lblNumerodoCartao";
+            this.lblNumerodoCartao.Size = new System.Drawing.Size(93, 13);
+            this.lblNumerodoCartao.TabIndex = 17;
+            this.lblNumerodoCartao.Text = "Numero do Cartão";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(47, 252);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Numero do Cartão";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(47, 212);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Documento";
+            // 
+            // mtbNumerodoCartao
+            // 
+            this.mtbNumerodoCartao.Location = new System.Drawing.Point(50, 271);
+            this.mtbNumerodoCartao.Mask = "000,000,000-00";
+            this.mtbNumerodoCartao.Name = "mtbNumerodoCartao";
+            this.mtbNumerodoCartao.Size = new System.Drawing.Size(110, 20);
+            this.mtbNumerodoCartao.TabIndex = 20;
+            this.mtbNumerodoCartao.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // frmListarProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.mtbNumerodoCartao);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblNumerodoCartao);
+            this.Controls.Add(this.txtDocumento);
+            this.Controls.Add(this.lblDocumento);
+            this.Controls.Add(this.txtNumerodoCartao);
+            this.Controls.Add(this.lblReserva);
+            this.Controls.Add(this.ltbReservas);
+            this.Controls.Add(this.lblReservar);
+            this.Controls.Add(this.btnReservar);
             this.Controls.Add(this.lblTrueName);
             this.Controls.Add(this.btnTestarPessoa);
             this.Controls.Add(this.btnVoltar);
@@ -171,5 +291,16 @@ namespace ProjetoMosquitoVelho
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnTestarPessoa;
         private System.Windows.Forms.Label lblTrueName;
+        private System.Windows.Forms.Button btnReservar;
+        private System.Windows.Forms.Label lblReservar;
+        private System.Windows.Forms.Label lblReserva;
+        private System.Windows.Forms.ListBox ltbReservas;
+        private System.Windows.Forms.ComboBox txtNumerodoCartao;
+        private System.Windows.Forms.Label lblDocumento;
+        private System.Windows.Forms.ComboBox txtDocumento;
+        private System.Windows.Forms.Label lblNumerodoCartao;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox mtbNumerodoCartao;
     }
 }

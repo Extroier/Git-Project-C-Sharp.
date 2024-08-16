@@ -32,7 +32,7 @@ namespace ProjetoMosquitoVelho
             this.Close();*/
             Application.Exit();                                           
         }
-
+      
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             if (txtUser.Text.Equals("User") && txtSenha.Text.Equals("senha")) 
@@ -59,8 +59,8 @@ namespace ProjetoMosquitoVelho
         {
             MessageBox.Show("Self Destruction Mode Activated.");
         }
-
-        private void txtUser_KeyDown(object sender, KeyEventArgs e)
+   
+    private void txtUser_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -92,6 +92,11 @@ namespace ProjetoMosquitoVelho
             IntPtr hMenu = GetSystemMenu(this.Handle, false);
             int MenuCount = GetMenuItemCount(hMenu) - 1;
             RemoveMenu(hMenu, MenuCount, MF_BYCOMMAND);
+        }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

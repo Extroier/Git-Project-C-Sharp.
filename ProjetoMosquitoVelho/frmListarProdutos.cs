@@ -125,8 +125,33 @@ namespace ProjetoMosquitoVelho
             Pessoa Truename = new Pessoa();
             Truename.Nome = "Artoria";
             lblTrueName.Text = Truename.Nome;
+            //Pessoa E = new Pessoa();
+            //E.Email = "Pendragon"();
+            //lblTrueName.Text = E.Email;
+            Pessoa Vivo = new Pessoa();
+            Vivo.Alive = true;
+            Pessoa Age = new Pessoa();
+            Age.Idade = 23;
 
            }
+
+        private void btnReservar_Click(object sender, EventArgs e)
+        {
+            Bilhete bilhete = new Bilhete();
+            bilhete.Documento = txtDocumento.Text;
+            bilhete.NumeroCartao = mtbNumerodoCartao.Text;
+            
+            lblDocumento.Text = bilhete.Documento;
+            lblNumerodoCartao.Text = bilhete.NumeroCartao;
+           // bilhete.reservar(psg "Star Rail");
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
         //static bool flag = false;
         // class Conexao 
 
